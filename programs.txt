@@ -1,0 +1,39 @@
+#include<iostream>
+using namespace std;
+class board
+{
+
+char name[100];
+int amt,unit,i;
+public:
+void Getdata()
+{
+cout<<"ENTER THE NAME: ";
+cin.getline(name,100);
+//cin>>name;
+cout<<"ENTER THE UNITS CONSUMED: ";
+cin>>unit;
+if(unit<=100){
+amt=unit*0.40;
+}
+else if(unit>100&&unit<=300){
+amt=100*0.40+(unit-100)*0.50;
+}
+else if(unit>300){
+amt=100*0.40+200*0.50+(unit-300)*0.60;
+}
+
+cout<<"USERNAME:"<<name<<endl;
+cout<<"UNITS CONSUMED: "<<unit<<endl;
+cout<<"CHARGES: "<<amt;
+}
+};
+main(){
+board elec[1000];
+int n,i;
+cout<<"ENTER THE NUMBER OF USERS: ";
+cin>>n;
+for(i=0;i<n;i++){
+elec[i].Getdata();
+}
+}

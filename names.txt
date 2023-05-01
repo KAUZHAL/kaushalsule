@@ -1,0 +1,63 @@
+#include<stdio.h>
+#include<string.h>
+struct bks{
+char bktitle[15];
+char bkauthor[15];
+char bkpublisher[15];
+int cost;
+int access;
+}user[100];
+void main(){
+int numb,i;
+char inp[100][100];
+printf("ENTER THE NUMBER OF BOOKS:");
+scanf("%d",&numb);
+for(i=0;i<numb;i++){
+printf("ENTER BOOK'S TITLE:");
+scanf("%s",user[i].bktitle);
+printf("ENTER AUTHOR NAME:");
+scanf("%s",user[i].bkauthor);
+printf("ENTER PUBLISHER'S NAME:");
+scanf("%s",user[i].bkpublisher);
+printf("ENTER BOOK'S COST:");
+scanf("%d",&user[i].cost);
+user[i].access=i+1;
+}
+printf("ENTER THE AUTHOR'S NAME TO BE CHECKED:");
+char authname[15];
+scanf("^/n",authname);
+int count=0;
+for(i=0;i<numb;i++){
+if(strcmp(user[i].bkauthor,authname)==0){
+printf("NAME:%s\nAUTHOR:%s\nPUBLISHER:%s\nCOST:%d\nACCESSION NUMBER:%d\n",user[i].bktitle,user[i].bkauthor,user[i].bkpublisher,user[i].cost,user[i].access);
+count++;
+}
+if(count==0){
+printf("NO BOOK FOUND\n");
+}
+printf("\n");
+printf("ENTER THE PUBLISHER'S NAME TO BE CHECKED:");
+char pubname[100];
+getch(pubname);
+for(i=0;i<numb;i++){
+if(strcmp(user[i].bkpublisher,pubname)==0){
+printf("NAME:%s\nAUTHOR:%s\nPUBLISHER:%s\nCOST:%d\nACCESSION NUMBER:%d\n",user[i].bktitle,user[i].bkauthor,user[i].bkpublisher,user[i].cost,user[i].access);
+count++;
+}
+if(count==0){
+printf("No book found:\n");
+}
+ printf("\n");
+printf("DETAILS OF BOOKS' PRICE>=Rs500 :\n");
+for(i=0;i<numb;i++){
+if(user[i].cost>=500){
+printf("NAME:%s\tAUTHOR:%s\tPUBLISHER:%s\tCOST:%d\tACCESSION NUMBER:%d\n",user[i].bktitle,user[i].bkauthor,user[i].bkpublisher,user[i].cost,user[i].access);
+}
+    }printf("\n");
+    printf("DETAILS OF BOOKS:\n");
+    for(i=0;i<numb;i++){
+        printf("NAME:%s\tAUTHOR:%s\tPUBLISHER:%s\tCOST%d\tACCESSION NUMBER:%d\n",user[i].bktitle,user[i].bkauthor,user[i].bkpublisher,user[i].cost,user[i].access);
+}
+}
+}
+}
